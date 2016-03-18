@@ -1,0 +1,6 @@
+pytest-cov==2.2.1
+weppy-BS3==0.4
+wsgiref==0.1.2
+weppy-Haml==0.3
+weppy-Assets==0.3.1
+wheel==0.29.0
