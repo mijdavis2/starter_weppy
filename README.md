@@ -1,8 +1,16 @@
-# Heliosphere
+# starter_weppy
 
-Heliosphere is an experimental microservice built on the
-[weppy framework](http://weppy.org/).
+Starter_weppy is an experimental baseline microservice application
+starter kit built on the [weppy framework](http://weppy.org/). 
+It's app name is "heliosphere", which one could say is ironic for a microservice. 
 
+TODO: 
+
+- Write a script that will create a project based on this "starter
+weppy" structure with an app name as an argument.
+- In said script, allow for certain "modules" to be included.
+
+TOC:
 
 - [How to use it](#how-to-use-it)
 - [Test](#test)
