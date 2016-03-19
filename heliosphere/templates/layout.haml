@@ -4,9 +4,14 @@
     %title {{=current.response.meta.title or ''}}
     %meta{name: "viewport", content:"width=device-width, initial-scale=1"}
     %link{href: "../static/images/favicon.ico", rel: "shortcut icon"}
+
+    - include_helpers
     - include_static 'bs3/bootstrap.min.css'
     - include_static 'bs3/bootstrap-theme.css'
+
   %body
+    - current_user = current.session.auth.user if current.session.auth else None
+    - T = current.T
     %nav.navbar.navbar-inverse.navbar-static-top{role: "navigation", style: "color:white;"}
       .container-fluid
         .navbar-header
@@ -24,5 +29,7 @@
               %a{href: "#"} About
             %li
               %a{href: "#"} Contact
+            %li
+              %a{href: "{{=url('main.account', 'login')}}"} Login
     - include
     - include_static 'bs3/bootstrap.min.js'

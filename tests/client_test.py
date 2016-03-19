@@ -14,4 +14,9 @@ def test_welcome(client):
 
 def test_error_404(client):
     resp = client.get('asidufhlaksdjfliasghdlk')
-    assert "<title>Helio-404</title>" in resp.data
+    assert "<title>Heliosphere-404</title>" in resp.data
+
+
+def test_account_page_access(client):
+    resp = client.get('/account/login')
+    assert "Heliosphere | Account" in resp.data

@@ -41,5 +41,5 @@ python run.py
 Run:
 
 ```
-py.test --cov=heliosphere tests
+py.test --cov-report term-missing --cov=<app-name> tests
 ```

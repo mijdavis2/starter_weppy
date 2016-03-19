@@ -6,3 +6,5 @@
 *generated/
 *cache
 .coverage
+*databases/
+*private/
