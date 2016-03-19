@@ -7,7 +7,7 @@ def client():
     return app.test_client()
 
 
-def test_welcome(client):
+def test_welcome_page_access(client):
     resp = client.get('/')
     assert 'Welcome to the Heliosphere' in resp.data
 
@@ -22,6 +22,6 @@ def test_account_page_access(client):
     assert "Heliosphere | Account" in resp.data
 
 
-def test_users_page(client):
+def test_users_page_access(client):
     resp = client.get('/users/')
     assert "Heliosphere | Users" in resp.data

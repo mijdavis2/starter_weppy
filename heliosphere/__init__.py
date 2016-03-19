@@ -24,8 +24,9 @@ auth = Auth(
 )
 
 # adding sessions and authorization handlers
+from utils import get_cryptogen_string
 app.route.common_handlers = [
-    SessionCookieManager('verySecretKey'),
+    SessionCookieManager(get_cryptogen_string(32)),
     db.handler,
     auth.handler
 ]
@@ -38,7 +39,6 @@ app.use_extension(Haml)
 
 # Expose controllers
 from controllers import main, api
-
 
 # Commands
 import cli
