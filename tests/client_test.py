@@ -20,3 +20,8 @@ def test_error_404(client):
 def test_account_page_access(client):
     resp = client.get('/account/login')
     assert "Heliosphere | Account" in resp.data
+
+
+def test_users_page(client):
+    resp = client.get('/users/')
+    assert "Heliosphere | Users" in resp.data

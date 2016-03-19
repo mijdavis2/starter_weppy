@@ -1,14 +1,17 @@
 - extend "layout.haml"
 
-.content
-  .container
-    .row
-      .col-lg-6.col-lg-offset-3
+.container
+  .row
+    .col-lg-6.col-lg-offset-3
+      - if not current_user and req != 'register'
         %h1 Signin
         = form
         %br
-        - if not current_user and req != 'register'
           %p
             New User?
             %a{href: "{{=url('main.account', 'register')}}"}
               Register Here
+      - else
+        %h1 Profile
+        = form
+        %br

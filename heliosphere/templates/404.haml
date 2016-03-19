@@ -12,7 +12,7 @@
   %body
     - T = current.T
     %nav.navbar.navbar-inverse.navbar-static-top{role: "navigation", style: "color:white;"}
-      .container-fluid
+      .container
         .navbar-header
           %button.navbar-toggle{type: "button", data-toggle: "collapse", data-target: ".navbar-collapse"}
             %span.sr-only Toggle Navigation
@@ -30,8 +30,12 @@
               %a{href: "#"} Contact
             %li
               %a{href: "{{=url('main.account', 'login')}}"} Login
-  .container-fluid
+  .container
     %h1 404 KABOOM!
     %p Sorry... the page you are looking for doesn't exist.
 
-  - include_static 'bs3/bootstrap.min.js'
+  %footer.footer.navbar-fixed-bottom{style: "background-color:#222; padding-top:10px"}
+    .container
+      %p.text-muted copyright Heliosphere 2016
+
+    - include_static 'bs3/bootstrap.min.js'
