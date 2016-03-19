@@ -1,4 +1,7 @@
-"""Usage: weppy --app=heliosphere <command>"""
+"""
+Usage:   weppy --app=heliosphere <command>
+Example: weppy --app=heliosphere shell
+"""
 from heliosphere import app
 
 

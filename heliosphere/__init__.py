@@ -6,6 +6,8 @@ app = App(__name__)
 
 # Config
 app.config.url_default_namespace = "main"
+app.config.db.adapter = "sqlite"
+app.config.db.host = "127.0.0.1"
 
 # Language settings
 app.languages = ['en']
@@ -26,7 +28,7 @@ auth = Auth(
 # adding sessions and authorization handlers
 from utils import get_cryptogen_string
 app.route.common_handlers = [
-    SessionCookieManager(get_cryptogen_string(32)),
+    SessionCookieManager(get_cryptogen_string(16)),
     db.handler,
     auth.handler
 ]

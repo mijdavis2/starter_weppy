@@ -30,6 +30,8 @@
               %a{href: "#"} About
             %li
               %a{href: "#"} Contact
+            %li
+              %a{href: "{{=url('main.users')}}"} Users
             - if not current_user
               %li
                 %a{href: "{{=url('main.account', 'login')}}"} Login

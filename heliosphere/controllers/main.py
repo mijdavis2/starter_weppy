@@ -1,6 +1,5 @@
 from weppy import response, url
 from weppy.tools import requires
-
 from heliosphere import app, auth, db
 
 
