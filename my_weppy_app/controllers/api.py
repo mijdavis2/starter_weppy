@@ -1,6 +1,6 @@
 from weppy import AppModule
 from weppy.tools import ServiceHandler
-from heliosphere import app
+from my_weppy_app import app
 
 api = AppModule(app, 'api', __name__, url_prefix='api')
 api.common_handlers = [ServiceHandler('json')]

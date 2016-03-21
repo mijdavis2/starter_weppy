@@ -1,22 +1,26 @@
-# starter_weppy
+# Starter Weppy
 
-Starter_weppy is an experimental baseline microservice application
+Starter Weppy is an experimental baseline microservice application
 starter kit built on the [weppy framework](http://weppy.org/). 
-It's app name is "heliosphere", which one could say is ironic for a microservice. 
 
 TODO: 
 
-- Write a script that will create a project based on this "starter
+- Write a script that will create a new project based on this "starter
 weppy" structure with an app name as an argument.
-- In said script, allow for certain "modules" to be included.
 
-TOC:
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [How to use it](#how-to-use-it)
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Run](#run)
+- [Develop](#develop)
 - [Test](#test)
 
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## How to use it?
+
+## Run
 
 Requirements:
 - Python 2.7.11
@@ -36,10 +40,29 @@ pip install -r requirements.txt
 python run.py
 ```
 
-## Test
 
-Run:
+## Develop
+
+Running in development mode will enable debug pages,
+automatically create test, users in multiple states,
+and upon killing the app, those test users will automatically be 
+deleted from the DB.
+
+To start the app in development mode, do:
 
 ```
-py.test --cov-report term-missing --cov=<app-name> tests
+python run.py --dev
+```
+
+See ```my_weppy_app_/cli.py``` for cli commands. 
+
+## Test
+
+The tests requires the app to be running in dev mode for integration
+testing.
+
+Run the app in dev mode. Then in another shell, do:
+
+```
+py.test -v -s --cov-report term-missing --cov=my_weppy_app tests
 ```

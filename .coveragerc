@@ -1,2 +1,2 @@
 [run]
-omit = heliosphere/cli.py
+omit = my_weppy_app/cli.py,my_weppy_app/dev_utils.py

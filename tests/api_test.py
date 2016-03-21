@@ -1,6 +1,6 @@
 import pytest
 import json
-from heliosphere import app
+from my_weppy_app import app
 
 
 @pytest.fixture()

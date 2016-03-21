@@ -21,15 +21,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "{{=url('main.welcome')}}"} Heliosphere
+          %a.navbar-brand{href: "{{=url('main.welcome')}}"} MyWeppyApp
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               %a{href: "{{=url('main.welcome')}}"} Home
-            %li
-              %a{href: "#"} About
-            %li
-              %a{href: "#"} Contact
             %li
               %a{href: "{{=url('main.users')}}"} Users
             - if not current_user
@@ -43,8 +39,8 @@
 
     - include
 
-    %footer.footer.navbar-fixed-bottom{style: "background-color:#222; padding-top:10px"}
-      .container
-        %p.text-muted copyright Heliosphere 2016
+    %footer.footer.navbar.navbar-inverse.navbar-fixed-bottom
+      .container{style: "padding-top:10px"}
+        %p.text-muted copyright MyWeppyApp 2016
 
     - include_static 'bs3/bootstrap.min.js'
