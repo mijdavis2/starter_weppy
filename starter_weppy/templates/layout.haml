@@ -10,8 +10,10 @@
     - include_static 'bs3/bootstrap-theme.css'
 
   %body
+    - current_user = current.session.auth.user if current.session.auth else None
     - T = current.T
-    %nav.navbar.navbar-inverse.navbar-static-top{role: "navigation", style: "color:white;"}
+
+    %nav.navbar.navbar-inverse.navbar-static-top
       .container
         .navbar-header
           %button.navbar-toggle{type: "button", data-toggle: "collapse", data-target: ".navbar-collapse"}
@@ -19,21 +21,26 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "{{=url('main.welcome')}}"} MyWeppyApp
+          %a.navbar-brand{href: "{{=url('main.welcome')}}"} StarterWeppy
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               %a{href: "{{=url('main.welcome')}}"} Home
             %li
               %a{href: "{{=url('main.users')}}"} Users
-            %li
-              %a{href: "{{=url('main.account', 'login')}}"} Login
-  .container
-    %h1 404 KABOOM!
-    %p Sorry... the page you are looking for doesn't exist.
+            - if not current_user
+              %li
+                %a{href: "{{=url('main.account', 'login')}}"} Login
+            - else
+              %li
+                %a{href: "{{=url('main.profile', current_user.id)}}"} Profile
+              %li
+                %a{href: "{{=url('main.account', 'logout')}}"} Logout
 
-  %footer.footer.navbar.navbar-inverse.navbar-fixed-bottom
-    .container{style: "padding-top:10px"}
-      %p.text-muted copyright MyWeppyApp 2016
+    - include
 
-  - include_static 'bs3/bootstrap.min.js'
+    %footer.footer.navbar.navbar-inverse.navbar-fixed-bottom
+      .container{style: "padding-top:15px"}
+        %p.text-muted copyright StarterWeppy 2016
+
+    - include_static 'bs3/bootstrap.min.js'

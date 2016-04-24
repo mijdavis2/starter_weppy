@@ -1,11 +1,11 @@
 from contextlib import contextmanager
 from argparse import ArgumentParser
-from my_weppy_app import app
+from starter_weppy import app
 
 
 @contextmanager
 def run_in_dev():
-    from my_weppy_app.dev_utils import setup_dev_users, remove_dev_users
+    from starter_weppy.dev_utils import setup_dev_users, remove_dev_users
     setup_dev_users()
     try:
         yield
@@ -14,7 +14,7 @@ def run_in_dev():
 
 
 if __name__ == "__main__":
-    arg_parser = ArgumentParser(description="MyWeppyApp running utility.")
+    arg_parser = ArgumentParser(description="StarterWeppy running utility.")
     arg_parser.add_argument('-d', '--dev', help="Setup add dev users and enable verbose logging",
                             action='store_true')
     args = arg_parser.parse_args()
@@ -22,4 +22,4 @@ if __name__ == "__main__":
         with run_in_dev():
             app.run()
     else:
-        app.run(debug=False)
+        app.run(host="0.0.0.0", debug=False)

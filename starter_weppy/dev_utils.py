@@ -1,4 +1,4 @@
-from my_weppy_app import db
+from starter_weppy import db
 from tests.fixtures import *
 
 
@@ -16,15 +16,15 @@ def setup_dev_users():
             password=TEST_USER.password
     )
     db.commit()
-    print "Admin: {}\n" \
-          "User: {}\n".format(admin.__dict__, user.__dict__)
+    print("Admin: {}\n"
+          "User: {}\n".format(admin.__dict__, user.__dict__))
 
 
 def remove_dev_users():
-    from my_weppy_app.models.user import User
+    from starter_weppy.models.user import User
     from tests.fixtures import TEST_ADMIN, TEST_USER
-    print db(User.email == TEST_ADMIN.email).select()
-    print db(User.email == TEST_USER.email).select()
+    print(db(User.email == TEST_ADMIN.email).select())
+    print(db(User.email == TEST_USER.email).select())
     db(User.email == TEST_ADMIN.email).delete()
     db(User.email == TEST_USER.email).delete()
     db.commit()

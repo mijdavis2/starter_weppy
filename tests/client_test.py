@@ -1,43 +1,26 @@
-import pytest
-from my_weppy_app import app, db, User
-from my_weppy_app import utils
-from tests.fixtures import TEST_USER
-
-
-@pytest.fixture()
-def client():
-    return app.test_client()
+from starter_weppy import User, db
+from starter_weppy import utils
+from .fixtures import *
 
 
 def test_welcome_page_access(client):
     resp = client.get('/')
-    assert 'Welcome to MyWeppyApp' in resp.data
+    assert 'Welcome to StarterWeppy' in resp.data
 
 
 def test_error_404(client):
     resp = client.get(utils.get_cryptogen_string())
-    assert "<title>MyWeppyApp-404</title>" in resp.data
+    assert "<title>StarterWeppy-404</title>" in resp.data
 
 
 def test_account_page_access(client):
     resp = client.get('/account/login')
-    assert "MyWeppyApp | Account" in resp.data
+    assert "StarterWeppy | Account" in resp.data
 
 
 def test_users_page_access(client):
     resp = client.get('/users/')
-    assert "MyWeppyApp | Users" in resp.data
-
-
-@pytest.fixture()
-def logged_client(client):
-    resp = client.get('/account/login')
-    client.post('/account/login', data={
-        'email': TEST_USER.email,
-        'password': TEST_USER.password,
-        '_csrf_token': list(resp.context.session._csrf)[-1]
-    }, follow_redirects=True)
-    return client
+    assert "StarterWeppy | Users" in resp.data
 
 
 def test_login_page(logged_client):

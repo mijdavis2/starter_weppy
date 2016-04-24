@@ -23,7 +23,7 @@ weppy" structure with an app name as an argument.
 ## Run
 
 Requirements:
-- Python 2.7.11
+- Python 3.5.1
 
 For automated pip and virtual env setup and creation, 
 clone this repository and in your terminal do:
@@ -40,6 +40,12 @@ pip install -r requirements.txt
 python run.py
 ```
 
+**Run in Docker**
+
+```
+docker build -t starter-weppy .
+docker run -it -p 80:8000 --rm --name starter-weppy starter-weppy
+```
 
 ## Develop
 
@@ -54,7 +60,7 @@ To start the app in development mode, do:
 python run.py --dev
 ```
 
-See ```my_weppy_app_/cli.py``` for cli commands. 
+See ```starter_weppy/cli.py``` for cli commands. 
 
 ## Test
 
@@ -64,5 +70,5 @@ testing.
 Run the app in dev mode. Then in another shell, do:
 
 ```
-py.test -v -s --cov-report term-missing --cov=my_weppy_app tests
+py.test -v -s --cov-report term-missing --cov=starter_weppy tests
 ```

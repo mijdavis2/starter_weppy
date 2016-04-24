@@ -16,7 +16,7 @@ app.language_force_on_url = True
 app.language_write = True
 
 # init database and auth
-from models.user import User
+from starter_weppy.models.user import User
 
 # init auth before passing db models due to dependencies
 # on auth tables in the other models
@@ -26,7 +26,7 @@ auth = Auth(
 )
 
 # adding sessions and authorization handlers
-from utils import get_cryptogen_string
+from starter_weppy.utils import get_cryptogen_string
 app.route.common_handlers = [
     SessionCookieManager(get_cryptogen_string(16)),
     db.handler,
@@ -40,7 +40,7 @@ app.config.Haml.auto_reload = True
 app.use_extension(Haml)
 
 # Expose controllers
-from controllers import main, api
+from starter_weppy.controllers import main, api
 
 # Commands
-import cli
+from starter_weppy import cli

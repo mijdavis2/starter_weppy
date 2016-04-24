@@ -8,6 +8,9 @@
 
 VERSION=0.1.0
 USAGE='Usage: source setup.sh -hv -p "/path/to/python/" -r "repoName" -q "/path/to/requirements.txt"'
+PY_MAJ_REQ=3
+PY_MIN_REQ=5
+PY_PAT_REQ=1
 
 # --- Option processing --------------------------------------------
 while getopts ":v:h:p:r:q:" o; do
@@ -59,19 +62,19 @@ fi
 if [ ! "$PYTHON" ]
 then
     echo "No python version designated."
-    echo "Using machine's default python version"
-    PYTHON="$( which python )"
+    echo "Using machine's default python$PY_MAJ_REQ.$PY_MIN_REQ version"
+    PYTHON="$( which python"$PY_MAJ_REQ"."$PY_MIN_REQ" )"
 fi
 
 PMAJOR="$( "$PYTHON" -c 'import platform; major, minor, patch = platform.python_version_tuple(); print(major);' )"
 PMINOR="$( "$PYTHON" -c 'import platform; major, minor, patch = platform.python_version_tuple(); print(minor);' )"
 PPATCH="$( "$PYTHON" -c 'import platform; major, minor, patch = platform.python_version_tuple(); print(patch);' )"
 
-if [[ "$PMAJOR" -eq 2 ]] && [[ "$PMINOR" -eq 7 ]] && [[ "$PPATCH" -gt 10 ]]
+if [[ "$PMAJOR" -ge $PY_MAJ_REQ ]] && [[ "$PMINOR" -ge $PYMIN_REQ ]] && [[ "$PPATCH" -ge $PY_PAT_REQ ]]
 then
     echo "Python version is good enough: $PMAJOR.$PMINOR.$PPATCH."
 else
-    echo "Python version must be 2.7.11."
+    echo "Python version must be $PY_MAJ_REQ.$PY_MIN_REQ.$PY_PAT_REQ."
     echo "Yours is $PMAJOR.$PMINOR.$PPATCH :("
     return 1
 fi
@@ -150,4 +153,4 @@ while read dependency; do
     fi
 done < "$REQUIREMENTS_DIR"/requirements.txt
 
-export PYTHONPATH="$THIS_DIR":$HOME/.virtualenvs/"$REQUIRED_VENV"/lib/python2.7/site-packages:"$REQUIREMENTS_DIR"
+export PYTHONPATH="$THIS_DIR":$HOME/.virtualenvs/"$REQUIRED_VENV"/lib/python"$PMAJOR"."$PMINOR"/site-packages:"$REQUIREMENTS_DIR"

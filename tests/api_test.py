@@ -1,11 +1,5 @@
-import pytest
 import json
-from my_weppy_app import app
-
-
-@pytest.fixture()
-def client():
-    return app.test_client()
+from tests.fixtures import *
 
 
 def test_api_response(client):

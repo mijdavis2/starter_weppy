@@ -1,2 +1,2 @@
 [run]
-omit = my_weppy_app/cli.py,my_weppy_app/dev_utils.py
+omit = starter_weppy/cli.py,starter_weppy/dev_utils.py
