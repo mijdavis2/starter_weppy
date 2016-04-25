@@ -81,7 +81,6 @@ fi
 
 export VIRTUALENVWRAPPER_PYTHON="$PYTHON"
 
-mkdir -p logs
 
 export WORKON_HOME=~/.virtualenvs
 
