@@ -44,3 +44,15 @@ def logged_client():
         '_csrf_token': list(session._csrf)[-1]
     }, follow_redirects=True)
     return user_client
+
+
+@pytest.fixture()
+def admin_client():
+    admin_client = app.test_client()
+    admin_client.get("/account/login")
+    admin_client.post('/account/login', data={
+        'email': TEST_ADMIN.email,
+        'password': TEST_ADMIN.password,
+        '_csrf_token': list(session._csrf)[-1]
+    }, follow_redirects=True)
+    return admin_client

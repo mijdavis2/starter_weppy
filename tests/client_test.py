@@ -20,6 +20,11 @@ def test_account_page_access(client):
 
 def test_users_page_access(client):
     resp = client.get('/users/')
+    assert "StarterWeppy-403" in resp.data
+
+
+def test_admin_users_page_access(admin_client):
+    resp = admin_client.get('/users/')
     assert "StarterWeppy | Users" in resp.data
 
 
@@ -35,3 +40,8 @@ def test_profile_page(logged_client):
     resp = logged_client.get('/user/{}'.format(test_user_id))
     assert TEST_USER.first_name in resp.data
     assert TEST_USER.last_name in resp.data
+
+
+def test_maintenance_page(client):
+    resp = client.get("/maintenance_check")
+    assert "StarterWeppy | Maintenance" in resp.data

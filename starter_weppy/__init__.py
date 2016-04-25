@@ -2,10 +2,11 @@ from weppy import App, DAL
 from weppy.sessions import SessionCookieManager
 from weppy.tools import Auth
 
-app = App(__name__)
+app = App(__name__, template_folder="./views")
 
 # Config
 app.config.url_default_namespace = "main"
+app.config.templates_auto_reload = True
 app.config.db.adapter = "sqlite"
 app.config.db.host = "127.0.0.1"
 
@@ -22,7 +23,7 @@ from starter_weppy.models.user import User
 # on auth tables in the other models
 db = DAL(app)
 auth = Auth(
-        app, db, usermodel=User, base_url="account"
+        app, db, usermodel=User
 )
 
 # adding sessions and authorization handlers
@@ -40,7 +41,7 @@ app.config.Haml.auto_reload = True
 app.use_extension(Haml)
 
 # Expose controllers
-from starter_weppy.controllers import main, api
+from starter_weppy.controllers import *
 
 # Commands
 from starter_weppy import cli
