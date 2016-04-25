@@ -1,7 +1,7 @@
 # Starter Weppy
 
-Starter Weppy is an experimental baseline microservice application
-starter kit built on the [weppy framework](http://weppy.org/). 
+Starter Weppy is a web application starter kit 
+built on the [weppy framework](http://weppy.org/). 
 
 TODO: 
 
@@ -14,6 +14,7 @@ weppy" structure with an app name as an argument.
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Run](#run)
+  - [Docker](#docker)
 - [Develop](#develop)
 - [Test](#test)
 
@@ -22,7 +23,7 @@ weppy" structure with an app name as an argument.
 
 ## Run
 
-Requirements:
+**Requirements**:
 - Python 3.5.1
 
 For automated pip and virtual env setup and creation, 
@@ -40,12 +41,15 @@ pip install -r requirements.txt
 python run.py
 ```
 
-**Run in Docker**
+### Docker
+
+To make your application available at ```http://localhost/```:
 
 ```
 docker build -t starter-weppy .
 docker run -it -p 80:8000 --rm --name starter-weppy starter-weppy
 ```
+
 
 ## Develop
 
@@ -70,5 +74,5 @@ testing.
 Run the app in dev mode. Then in another shell, do:
 
 ```
-py.test -v -s --cov-report term-missing --cov=starter_weppy tests
+py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
 ```
