@@ -1,5 +1,5 @@
 # Starter Weppy
-![BuildStatus](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)
+[![Build Status](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)](https://travis-ci.org/mijdavis2/starter_weppy)
 [![Coverage Status](https://coveralls.io/repos/github/mijdavis2/starter_weppy/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/starter_weppy?branch=master)
 
 Starter Weppy is a web application starter kit 
