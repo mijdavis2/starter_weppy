@@ -1,4 +1,5 @@
 # Starter Weppy
+![BuildStatus](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)
 
 Starter Weppy is a web application starter kit 
 built on the [weppy framework](http://weppy.org/). 
