@@ -1,5 +1,5 @@
 import json
-from tests.fixtures import *
+from .fixtures import client
 
 
 def test_api_response(client):

@@ -68,11 +68,6 @@ See ```starter_weppy/cli.py``` for cli commands.
 
 ## Test
 
-The tests requires the app to be running in dev mode for integration
-testing.
-
-Run the app in dev mode. Then in another shell, do:
-
 ```
 py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
 ```

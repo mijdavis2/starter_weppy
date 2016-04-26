@@ -5,11 +5,11 @@ from starter_weppy import app
 
 @contextmanager
 def run_in_dev():
-    from starter_weppy.dev_utils import remove_dev_users
+    from starter_weppy.dev_utils import remove_test_users
     try:
         yield
     finally:
-        remove_dev_users()
+        remove_test_users()
 
 
 if __name__ == "__main__":
@@ -18,8 +18,8 @@ if __name__ == "__main__":
                             action='store_true')
     args = arg_parser.parse_args()
     if args.dev:
-        from starter_weppy.dev_utils import setup_dev_users
-        setup_dev_users()
+        from starter_weppy.dev_utils import setup_test_users
+        setup_test_users()
         with run_in_dev():
             app.run()
     else:
