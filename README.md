@@ -1,5 +1,6 @@
 # Starter Weppy
 ![BuildStatus](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mijdavis2/starter_weppy/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/starter_weppy?branch=master)
 
 Starter Weppy is a web application starter kit 
 built on the [weppy framework](http://weppy.org/). 
