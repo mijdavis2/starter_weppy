@@ -5,22 +5,8 @@
 Starter Weppy is a web application starter kit 
 built on the [weppy framework](http://weppy.org/). 
 
-TODO: 
-
-- Write a script that will create a new project based on this "starter
-weppy" structure with an app name as an argument.
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Run](#run)
-  - [Docker](#docker)
-- [Develop](#develop)
-- [Test](#test)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+TODO:
+- Complete yeoman generator at [https://github.com/mijdavis2/generator-weppy-mvc](https://github.com/mijdavis2/generator-weppy-mvc)
 
 
 ## Run
