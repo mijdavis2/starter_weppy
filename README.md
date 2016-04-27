@@ -12,7 +12,7 @@ TODO:
 ## Run
 
 **Requirements**:
-- Python 3.5.1
+- Python 3.4+ or 3.5+
 
 For automated pip and virtual env setup and creation, 
 clone this repository and in your terminal do:
