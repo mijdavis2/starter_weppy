@@ -73,3 +73,8 @@ See ```starter_weppy/cli.py``` for cli commands.
 ```
 py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
 ```
+
+
+## License
+
+MIT © [mijdavis2](http://mdavisinsc.com)
