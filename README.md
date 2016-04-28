@@ -1,4 +1,4 @@
-# Starter Weppy
+# <%= app_title %> 
 [![Build Status](https://travis-ci.org/mijdavis2/<%= app_name %>.svg?branch=master)](https://travis-ci.org/mijdavis2/<%= app_name %>)
 [![Coverage Status](https://coveralls.io/repos/github/mijdavis2/<%= app_name %>/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/<%= app_name %>?branch=master)
 
@@ -37,8 +37,8 @@ python run.py
 To make your application available at ```http://localhost/```:
 
 ```
-docker build -t starter-weppy .
-docker run -it -p 80:8000 --rm --name starter-weppy starter-weppy
+docker build -t <%= app_name %> .
+docker run -it -p 80:8000 --rm --name <%= app_name %> <%= app_name %>
 ```
 
 
