@@ -1,8 +1,8 @@
 """
-Usage:   weppy --app=starter_weppy <command>
-Example: weppy --app=starter_weppy shell
+Usage:   weppy --app=<%= app_name %> <command>
+Example: weppy --app=<%= app_name %> shell
 """
-from starter_weppy import app
+from <%= app_name %> import app
 
 
 @app.cli.command('routes')
@@ -12,8 +12,8 @@ def print_routing():
 
 @app.cli.command('get_users')
 def print_users():
-    from starter_weppy import db
-    from starter_weppy.models.user import User
+    from <%= app_name %> import db
+    from <%= app_name %>.models.user import User
     rows = db(User.email).select()
     for row in rows:
         print(row)

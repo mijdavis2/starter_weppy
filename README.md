@@ -1,6 +1,6 @@
 # Starter Weppy
-[![Build Status](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)](https://travis-ci.org/mijdavis2/starter_weppy)
-[![Coverage Status](https://coveralls.io/repos/github/mijdavis2/starter_weppy/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/starter_weppy?branch=master)
+[![Build Status](https://travis-ci.org/mijdavis2/<%= app_name %>.svg?branch=master)](https://travis-ci.org/mijdavis2/<%= app_name %>)
+[![Coverage Status](https://coveralls.io/repos/github/mijdavis2/<%= app_name %>/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/<%= app_name %>?branch=master)
 
 Starter Weppy is a python web application starter kit built on the [weppy framework](https://github.com/gi0baro/weppy). 
 Current version is based on Weppy 0.6 with an MVC scaffolding. 
@@ -55,12 +55,12 @@ To start the app in development mode, do:
 python run.py --dev
 ```
 
-See ```starter_weppy/cli.py``` for cli commands. 
+See ```<%= app_name %>/cli.py``` for cli commands. 
 
 ## Test
 
 ```
-py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
+py.test -v -s --cov-report term-missing --cov=<%= app_name %> -r w tests
 ```
 
 

@@ -1,8 +1,8 @@
 import pytest
 from weppy import session
 
-from starter_weppy import app
-from starter_weppy.dev_utils import setup_admin, remove_admin, setup_user, remove_user
+from <%= app_name %> import app
+from <%= app_name %>.dev_utils import setup_admin, remove_admin, setup_user, remove_user
 
 
 class UserMock(object):

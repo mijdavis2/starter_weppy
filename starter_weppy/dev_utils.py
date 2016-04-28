@@ -1,5 +1,5 @@
-from starter_weppy import db, auth
-from starter_weppy.models.user import User
+from <%= app_name %> import db, auth
+from <%= app_name %>.models.user import User
 
 
 def setup_test_users():

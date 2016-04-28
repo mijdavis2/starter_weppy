@@ -1,31 +1,31 @@
-from starter_weppy import User, db
-from starter_weppy import utils
+from <%= app_name %> import User, db
+from <%= app_name %> import utils
 from .fixtures import client, admin_client, logged_client, TEST_USER
 
 
 def test_welcome_page_access(client):
     resp = client.get('/')
-    assert 'Welcome to StarterWeppy' in resp.data
+    assert 'Welcome to <%= app_title %>' in resp.data
 
 
 def test_error_404(client):
     resp = client.get(utils.get_cryptogen_string())
-    assert "<title>StarterWeppy-404</title>" in resp.data
+    assert "<title><%= app_title %>-404</title>" in resp.data
 
 
 def test_account_page_access(client):
     resp = client.get('/account/login')
-    assert "StarterWeppy | Account" in resp.data
+    assert "<%= app_title %> | Account" in resp.data
 
 
 def test_users_page_access(client):
     resp = client.get('/users/')
-    assert "StarterWeppy-403" in resp.data
+    assert "<%= app_title %>-403" in resp.data
 
 
 def test_admin_users_page_access(admin_client):
     resp = admin_client.get('/users/')
-    assert "StarterWeppy | Users" in resp.data
+    assert "<%= app_title %> | Users" in resp.data
 
 
 def test_login_page(logged_client):
@@ -44,4 +44,4 @@ def test_profile_page(logged_client):
 
 def test_maintenance_page(client):
     resp = client.get("/maintenance_check")
-    assert "StarterWeppy | Maintenance" in resp.data
+    assert "<%= app_title %> | Maintenance" in resp.data
