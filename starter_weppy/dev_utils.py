@@ -2,27 +2,11 @@ from <%= app_name %> import db, auth
 from <%= app_name %>.models.user import User
 
 
-def setup_test_users():
-    test_admin = setup_admin()
-    test_user = setup_user()
-    print("Admin: {} \nUser: {}\n".format(test_admin.as_dict(), test_user.as_dict()))
-
-
-def remove_test_users():
-    remove_admin()
-    remove_user()
-
-
 def setup_admin():
     from tests.fixtures import TEST_ADMIN
     db._adapter.reconnect()
-    admins = auth.id_group("admin")
+    admins = auth.id_group("admin") if auth.id_group("admin") else auth.add_group("admin")
     print("Admin group id: '{}'".format(admins))
-    if not admins:
-        db._adapter.reconnect()
-        admins = auth.add_group("admin")
-        db.commit()
-        print("Created admin group id: '{}'".format(admins))
     db._adapter.reconnect()
     admin = db.User.validate_and_insert(
             email=TEST_ADMIN.email,
