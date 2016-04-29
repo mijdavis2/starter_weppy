@@ -9,3 +9,4 @@ script:
   - py.test -v --cov-report term-missing --cov=starter_weppy -r w tests
 after_success:
   - coveralls
+  - python-codacy-coverage -r coverage.xml
