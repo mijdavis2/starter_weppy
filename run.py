@@ -20,9 +20,9 @@ if __name__ == "__main__":
     args = arg_parser.parse_args()
     if args.dev:
         from starter_weppy.dev_utils import setup_admin, setup_user
-        test_admin = setup_admin()
-        test_user = setup_user()
-        print("Admin: {} \nUser: {}\n".format(test_admin.as_dict(), test_user.as_dict()))
+        TEST_ADMIN = setup_admin()
+        TEST_USER = setup_user()
+        print("Admin: {} \nUser: {}\n".format(TEST_ADMIN.as_dict(), TEST_USER.as_dict()))
         with run_in_dev():
             app.run()
     else:
