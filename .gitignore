@@ -8,4 +8,4 @@
 .coverage
 *databases/
 *private/
-.coverage.xml
+coverage.xml
