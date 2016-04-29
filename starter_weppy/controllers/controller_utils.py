@@ -1,4 +1,4 @@
-from weppy import response, abort, url, redirect
+from weppy import response, abort
 
 from starter_weppy import app, auth
 
