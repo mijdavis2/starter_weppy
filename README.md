@@ -7,14 +7,14 @@ Starter Weppy is a python web application starter kit built on the [weppy framew
 Current version is based on Weppy 0.6 with an MVC scaffolding. 
 An api module, dev mode, and 100% test coverage are included out of the box.
 
-**TODO**:
-- Complete [generator-weppy-mvc](https://github.com/mijdavis2/generator-weppy-mvc):
- generator-weppy-mvc will be a [yeoman](http://yeoman.io/) generator for this project. Current status:
- [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-
+## Start a New Project:
+ Use the Starter Weppy yeoman generator: [generator-weppy-mvc](https://github.com/mijdavis2/generator-weppy-mvc).
+ > # generator-weppy-mvc 
+ > [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce0ad20ca59947af86b0f17a5779c804)](https://www.codacy.com/app/mijdavis2/generator-weppy-mvc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mijdavis2/generator-weppy-mvc&amp;utm_campaign=Badge_Grade)
+ >
+ > The definitive [starter-weppy](https://github.com/mijdavis2/starter_weppy) generator.
 
 ## Run
-
 **Requirements**:
 - Python 3.4+ or 3.5+
 
@@ -27,14 +27,12 @@ python run.py
 ```
 
 Otherwise, do:
-
 ```
 pip install -r requirements.txt
 python run.py
 ```
 
 ### Docker
-
 To make your application available at ```http://localhost/```:
 
 ```
@@ -44,7 +42,6 @@ docker run -it -p 80:8000 --rm --name starter-weppy starter-weppy
 
 
 ## Develop
-
 Running in development mode will enable debug pages,
 automatically create test, users in multiple states,
 and upon killing the app, those test users will automatically be 
@@ -59,11 +56,9 @@ python run.py --dev
 See ```starter_weppy/cli.py``` for cli commands. 
 
 ## Test
-
 ```
 py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
 ```
-
 
 ## License
 
