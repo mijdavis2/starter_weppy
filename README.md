@@ -19,7 +19,7 @@ An api module, dev mode, and 100% test coverage are included out of the box.
 
 ## Run
 **Requirements**:
-- Python 3.5+
+- Python 3.4 - 3.5+
 
 For automated pip and virtual env setup and creation, 
 clone this repository and in your terminal do:
@@ -63,9 +63,14 @@ See ```starter_weppy/cli.py``` for cli commands.
 py.test -v -s --cov-report term-missing --cov=starter_weppy -r w tests
 ```
 
+## Caveats
+- The current setup.sh script is set to Python 3.5.2. Though I 
+suggest upgrading to 3.5.2, you can replace PYTHON_VERSION with 
+3.4.3 in the script.
+
 ## License
 
-MIT © [mijdavis2](http://mdavisinsc.com)
+MIT © [mijdavis2](http://mdavis.io)
 
 
 [npm-image]: https://badge.fury.io/js/generator-weppy-mvc.svg
