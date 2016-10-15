@@ -9,3 +9,6 @@
 *databases/
 *private/
 coverage.xml
+env/
+bin/
+tmp/
