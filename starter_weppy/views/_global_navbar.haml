@@ -17,7 +17,7 @@
             = T("Users")
         - if not current_user
           %li
-            %a{href: "{{=url('main.account', 'login')}}"}
+            %a{href: "{{=url('main.account', 'login')}}", id: "navbar-login"}
               = T("Login")
         - else
           %li

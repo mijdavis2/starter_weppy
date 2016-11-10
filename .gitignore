@@ -12,3 +12,4 @@ coverage.xml
 env/
 bin/
 tmp/
+ghostdriver.log
