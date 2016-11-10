@@ -72,10 +72,6 @@ Integration (selenium) testing:
 ./tests/selenium/run.sh
 ```
 
-## TODO
-
-- [ ] add test script that automatically runs test server 
-
 ## Caveats
 - The current setup.sh script is set to Python 3.5.2. Though I 
 suggest upgrading to 3.5.2, you can replace PYTHON_VERSION with 
