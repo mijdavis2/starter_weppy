@@ -1,6 +1,6 @@
 from starter_weppy import User, db
 from starter_weppy import utils
-from .fixtures import client, admin_client, logged_client, TEST_USER
+from tests.fixtures import client, admin_client, logged_client, TEST_USER
 
 
 def test_welcome_page_access(client):
