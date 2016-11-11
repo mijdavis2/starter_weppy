@@ -13,7 +13,7 @@ An api module, dev mode, and 100% test coverage are included out of the box.
 ## Start a New Project:
  Use the Starter Weppy yeoman generator: [generator-weppy-mvc](https://github.com/mijdavis2/generator-weppy-mvc).
  > # generator-weppy-mvc 
- > [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce0ad20ca59947af86b0f17a5779c804)](https://www.codacy.com/app/mijdavis2/generator-weppy-mvc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mijdavis2/generator-weppy-mvc&amp;utm_campaign=Badge_Grade) [![Weppy Version](https://img.shields.io/badge/weppy-0.7.10-blue.svg)](https://github.com/gi0baro/weppy)
+ > [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce0ad20ca59947af86b0f17a5779c804)](https://www.codacy.com/app/mijdavis2/generator-weppy-mvc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mijdavis2/generator-weppy-mvc&amp;utm_campaign=Badge_Grade)
  >
  > The definitive [starter-weppy](https://github.com/mijdavis2/starter_weppy) generator.
 
