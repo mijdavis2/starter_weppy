@@ -8,10 +8,11 @@ Starter Weppy is a python web application starter kit built on the [weppy framew
 Current version is based on Weppy 0.8 with an MVC scaffolding. 
 An api module, dev mode, and 100% test coverage are included out of the box.
 
-**Live demo: https://starter-weppy.com**
+**Live demo: [https://starter-weppy.com](https://starter-weppy.com)**
 
 ## Start a New Project:
  Use the Starter Weppy yeoman generator: [generator-weppy-mvc](https://github.com/mijdavis2/generator-weppy-mvc).
+ 
  > # generator-weppy-mvc 
  > [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ce0ad20ca59947af86b0f17a5779c804)](https://www.codacy.com/app/mijdavis2/generator-weppy-mvc?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mijdavis2/generator-weppy-mvc&amp;utm_campaign=Badge_Grade)
  >
@@ -19,6 +20,7 @@ An api module, dev mode, and 100% test coverage are included out of the box.
 
 ## Run
 **Requirements**:
+
 - Python 3.4 - 3.5+
 
 For automated pip and virtual env setup and creation, 
