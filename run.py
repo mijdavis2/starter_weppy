@@ -15,16 +15,21 @@ def run_in_dev():
 
 if __name__ == "__main__":
     arg_parser = ArgumentParser(description="StarterWeppy running utility.")
-    arg_parser.add_argument('-d', '--dev', help="Setup add dev users and enable verbose logging",
+    arg_parser.add_argument('-d', '--dev',
+                            help="Setup add dev users and enable verbose "
+                                 "logging",
                             action='store_true')
-    arg_parser.add_argument('-t', '--test', help="Run test server (setup dev users but squelch logging and reloader",
+    arg_parser.add_argument('-t', '--test',
+                            help="Run test server (setup dev users but "
+                                 "squelch logging and reloader",
                             action='store_true')
     args = arg_parser.parse_args()
     if args.dev or args.test:
         from starter_weppy.dev_utils import setup_admin, setup_user
         TEST_ADMIN = setup_admin()
         TEST_USER = setup_user()
-        print("Admin: {} \nUser: {}\n".format(TEST_ADMIN.as_dict(), TEST_USER.as_dict()))
+        print("Admin: {} \nUser: {}\n".format(
+              TEST_ADMIN.as_dict(), TEST_USER.as_dict()))
         with run_in_dev():
             if args.dev:
                 app.run()

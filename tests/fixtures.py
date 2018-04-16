@@ -2,7 +2,8 @@ import pytest
 from weppy import session
 
 from starter_weppy import app, db
-from starter_weppy.dev_utils import setup_admin, remove_admin, setup_user, remove_user
+from starter_weppy.dev_utils import (
+    setup_admin, remove_admin, setup_user, remove_user)
 
 
 class UserMock(object):
@@ -16,7 +17,8 @@ class UserMock(object):
         print("Email: {}\n"
               "First_Name: {}\n"
               "Last_Name: {}\n"
-              "Password: {}\n".format(self.email, self.first_name, self.last_name, self.password))
+              "Password: {}\n".format(
+              self.email, self.first_name, self.last_name, self.password))
 
 
 TEST_ADMIN = UserMock('test_admin@example.com',

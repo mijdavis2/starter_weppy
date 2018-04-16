@@ -11,12 +11,10 @@ def setup_admin():
         admins = auth.create_group("admin")
     print("Admin group id: '{}'".format(admins))
     #db._adapter.reconnect()
-    admin = db.User.validate_and_insert(
-            email=TEST_ADMIN.email,
-            first_name=TEST_ADMIN.first_name,
-            last_name=TEST_ADMIN.last_name,
-            password=TEST_ADMIN.password
-    )
+    admin = db.User.validate_and_insert(email=TEST_ADMIN.email,
+                                        first_name=TEST_ADMIN.first_name,
+                                        last_name=TEST_ADMIN.last_name,
+                                        password=TEST_ADMIN.password)
     db.commit()
     #db._adapter.reconnect()
     auth.add_membership(admins, admin)
@@ -39,12 +37,10 @@ def remove_admin():
 def setup_user():
     from tests.fixtures import TEST_USER
     #db._adapter.reconnect()
-    user = db.User.validate_and_insert(
-            email=TEST_USER.email,
-            first_name=TEST_USER.first_name,
-            last_name=TEST_USER.last_name,
-            password=TEST_USER.password
-    )
+    user = db.User.validate_and_insert(email=TEST_USER.email,
+                                       first_name=TEST_USER.first_name,
+                                       last_name=TEST_USER.last_name,
+                                       password=TEST_USER.password)
     db.commit()
     return user
 
