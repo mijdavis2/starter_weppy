@@ -15,26 +15,25 @@ def test_error_404(client):
 
 def test_account_page_access(client):
     resp = client.get('/account/login')
-    assert "StarterWeppy | Account" in resp.data
+    assert "Login" in resp.data
 
 
 def test_users_page_access(client):
-    resp = client.get('/users/')
+    resp = client.get('/users')
     assert "StarterWeppy-403" in resp.data
 
 
 def test_admin_users_page_access(admin_client):
-    resp = admin_client.get('/users/')
+    resp = admin_client.get('/users')
     assert "StarterWeppy | Users" in resp.data
 
 
 def test_login_page(logged_client):
-    resp = logged_client.get('/account/profile')
+    resp = logged_client.get('/account/login')
     assert 'Profile' in resp.data
 
 
 def test_profile_page(logged_client):
-    db._adapter.reconnect()
     rows = db(User.email == TEST_USER.email).select()
     test_user_id = rows[0].id
     resp = logged_client.get('/user/{}'.format(test_user_id))

@@ -1,9 +1,10 @@
 argparse==1.4.0
 codacy-coverage==1.2.12
 coverage==4.0.3
+pytest==3.5.0
 pytest-cov==2.2.1
-pytest==2.9.1
-pytest-selenium==1.5.1
+pytest-selenium==1.12.0
 selenium==3.0.1
-weppy==0.8.2
+weppy==1.2.10
+weppy-BS3==0.6
 weppy-Haml==0.3

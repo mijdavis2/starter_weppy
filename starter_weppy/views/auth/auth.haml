@@ -1,0 +1,8 @@
+- extend "layout.haml"
+
+  %h1 Account
+  - for flash in current.response.alerts(category_filter='auth'):
+    .flash_message
+      = flash
+
+  = form

@@ -2,11 +2,11 @@
 [![Build Status](https://travis-ci.org/mijdavis2/starter_weppy.svg?branch=master)](https://travis-ci.org/mijdavis2/starter_weppy)
 [![Coverage Status](https://coveralls.io/repos/github/mijdavis2/starter_weppy/badge.svg?branch=master)](https://coveralls.io/github/mijdavis2/starter_weppy?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e6e8b44b40a4f12937557a794b7d6a3)](https://www.codacy.com/app/mdavis/starter_weppy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mijdavis2/starter_weppy&amp;utm_campaign=Badge_Grade)
-[![Weppy Version](https://img.shields.io/badge/weppy-0.8.2-blue.svg)](https://github.com/gi0baro/weppy)
+[![Weppy Version](https://img.shields.io/badge/weppy-1.2.10-blue.svg)](https://github.com/gi0baro/weppy)
 
 Starter Weppy is a python web application starter kit built on the [weppy framework](https://github.com/gi0baro/weppy). 
-Current version is based on Weppy 0.8 with an MVC scaffolding. 
-An api module, dev mode, and 100% test coverage are included out of the box.
+Current version is based on Weppy 1.2 with an MVC scaffolding. 
+An api module, dev mode, and mostly 100% test coverage are included out of the box.
 
 **Live demo: [https://starter-weppy.com](https://starter-weppy.com)**
 

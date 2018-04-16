@@ -1,6 +1,7 @@
 from weppy import response
+from weppy import url, redirect
 
-from starter_weppy import app, auth
+from starter_weppy import app, auth, auth_routes
 
 
 @app.route("/")
@@ -9,8 +10,6 @@ def welcome():
     return dict()
 
 
-@app.route('/account(/<str:f>)?(/<str:k>)?')
-def account(f, k):
-    response.meta.title = "StarterWeppy | Account"
-    form = auth(f, k)
-    return dict(req=f, form=form)
+@auth_routes.after_login
+def after_login(form):
+    redirect(url('welcome'))

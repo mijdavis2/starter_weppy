@@ -17,12 +17,12 @@
             = T("Users")
         - if not current_user
           %li
-            %a{href: "{{=url('main.account', 'login')}}", id: "navbar-login"}
+            %a{href: "{{=url('/account/login')}}", id: "navbar-login"}
               = T("Login")
         - else
           %li
-            %a{href: "{{=url('user.profile', current_user.id)}}"}
+            %a{href: "{{=url('/account/profile')}}"}
               = T("Profile")
           %li
-            %a{href: "{{=url('main.account', 'logout')}}"}
+            %a{href: "{{=url('/account/logout')}}"}
               = T("Logout")
