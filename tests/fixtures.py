@@ -1,7 +1,7 @@
 import pytest
 from weppy import session
 
-from starter_weppy import app, db
+from starter_weppy import app, auth, db
 from starter_weppy.dev_utils import (
     setup_admin, remove_admin, setup_user, remove_user)
 
@@ -30,6 +30,17 @@ TEST_USER = UserMock('test_user@example.com',
                      'TestUserFirst',
                      'TestUserLast',
                      'testuser')
+
+
+@pytest.fixture(scope='function')
+def no_admin_group():
+    with db.connection():
+        auth.delete_group('admin')
+    try:
+        with db.connection():
+            yield
+    finally:
+        pass
 
 
 @pytest.fixture(scope='function')

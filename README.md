@@ -6,7 +6,7 @@
 
 Starter Weppy is a python web application starter kit built on the [weppy framework](https://github.com/gi0baro/weppy). 
 Current version is based on Weppy 1.2 with an MVC scaffolding. 
-An api module, dev mode, and mostly 100% test coverage are included out of the box.
+An api module, dev mode, and 100% test coverage are included out of the box.
 
 **Live demo: [https://starter-weppy.com](https://starter-weppy.com)**
 

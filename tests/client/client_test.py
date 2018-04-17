@@ -1,6 +1,7 @@
 from starter_weppy import User, db
 from starter_weppy import utils
-from tests.fixtures import client, admin_client, logged_client, TEST_USER
+from tests.fixtures import (
+    client, admin_client, logged_client, no_admin_group, TEST_USER)
 
 
 def test_welcome_page_access(client):
@@ -24,6 +25,11 @@ def test_users_page_access(client):
 
 
 def test_admin_users_page_access(admin_client):
+    resp = admin_client.get('/users')
+    assert "StarterWeppy | Users" in resp.data
+
+
+def test_admin_users_page_access_wo_admin_group(no_admin_group, admin_client):
     resp = admin_client.get('/users')
     assert "StarterWeppy | Users" in resp.data
 
