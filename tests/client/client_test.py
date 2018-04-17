@@ -16,7 +16,7 @@ def test_error_404(client):
 
 def test_account_page_access(client):
     resp = client.get('/account/login')
-    assert "Login" in resp.data
+    assert "StarterWeppy | Login" in resp.data
 
 
 def test_users_page_access(client):
@@ -34,12 +34,12 @@ def test_admin_users_page_access_wo_admin_group(no_admin_group, admin_client):
     assert "StarterWeppy | Users" in resp.data
 
 
-def test_login_page(logged_client):
-    resp = logged_client.get('/account/login')
-    assert 'Profile' in resp.data
-
-
 def test_profile_page(logged_client):
+    resp = logged_client.get('/account/profile')
+    assert 'StarterWeppy | Profile' in resp.data
+
+
+def test_self_user_page(logged_client):
     rows = db(User.email == TEST_USER.email).select()
     test_user_id = rows[0].id
     resp = logged_client.get('/user/{}'.format(test_user_id))
