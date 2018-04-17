@@ -12,7 +12,8 @@ def test_login(selenium):
     email_input.send_keys(TEST_USER.email)
     password_input = selenium.find_element_by_id("password")
     password_input.send_keys(TEST_USER.password)
-    login_btn = selenium.find_element_by_css_selector("form > div:nth-child(4) > input")
+    login_btn = selenium.find_element_by_css_selector(
+        "form > div:nth-child(4) > input")
     login_btn.click()
     loggedin_header = selenium.find_element_by_id("loggedin-header")
     assert loggedin_header.text == "Profile"

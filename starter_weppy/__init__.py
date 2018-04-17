@@ -1,6 +1,8 @@
-from weppy import App, DAL
-from weppy.sessions import SessionCookieManager
-from weppy.tools import Auth
+from weppy import App
+from weppy.orm import Database
+from weppy.sessions import SessionManager
+from weppy.tools.auth import Auth
+
 
 app = App(__name__, template_folder="./views")
 
@@ -9,6 +11,9 @@ app.config.url_default_namespace = "main"
 app.config.templates_auto_reload = True
 app.config.db.adapter = "sqlite"
 app.config.db.host = "127.0.0.1"
+app.config.auth.single_template = True
+app.config.auth.registration_verification = False
+app.config.auth.hmac_key = "MassiveDynamicRules"
 
 # Language settings
 app.languages = ['en']
@@ -21,24 +26,25 @@ from starter_weppy.models.user import User
 
 # init auth before passing db models due to dependencies
 # on auth tables in the other models
-db = DAL(app)
-auth = Auth(
-        app, db, usermodel=User
-)
+db = Database(app, auto_migrate=True, auto_connect=True)
+auth = Auth(app, db, user_model=User)
 
 # adding sessions and authorization handlers
-from starter_weppy.utils import get_cryptogen_string
-app.route.common_handlers = [
-    SessionCookieManager(get_cryptogen_string(16)),
-    db.handler,
-    auth.handler
+app.pipeline = [
+    SessionManager.cookies('Walternate'),
+    db.pipe,
+    auth.pipe
 ]
+
 
 # Extensions
 from weppy_haml import Haml
 app.config.Haml.set_as_default = True
 app.config.Haml.auto_reload = True
 app.use_extension(Haml)
+
+auth_routes = auth.module(__name__, url_prefix='account')
+
 
 # Expose controllers
 from starter_weppy.controllers import *
